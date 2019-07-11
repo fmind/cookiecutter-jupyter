@@ -1,0 +1,46 @@
+{
+    "name": "{{cookiecutter.name}}",
+    "version": "0.0.1",
+    "author": "{{cookiecutter.author}}",
+    "license": "{{cookiecutter.license}}",
+    "description": "TODO: write a description",
+    "keywords": [
+        "jupyter",
+        "jupyterlab",
+        "jupyterlab-extension"
+    ],
+    "jupyterlab": {
+        "extension": true
+    },
+    "repository": {
+        "type": "git",
+        "url": "{{cookiecutter.repository}}.git"
+    },
+    "homepage": "{{cookiecutter.repository}}",
+    "bugs": {
+        "url": "{{cookiecutter.repository}}/issues"
+    },
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "style": "style/index.css",
+    "files": [
+        "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+        "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+    ],
+    "sideEffects": [
+        "style/*.css"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
+        "prepare": "npm run clean && npm run build",
+        "watch": "tsc -w"
+    },
+    "dependencies": {
+        "@jupyterlab/application": "^1.0.0"
+    },
+    "devDependencies": {
+        "rimraf": "^2.6.1",
+        "typescript": "~3.5.2"
+    }
+}
